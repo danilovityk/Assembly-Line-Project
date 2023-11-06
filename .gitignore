@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+#Xcode files
+*.DS_Store
+*.xcodeproj
