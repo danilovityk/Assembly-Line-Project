@@ -1,3 +1,8 @@
+// - Danylo Vityk
+// - 176326213
+// - dvityk@myseneca.ca
+// - Nov 6, 2023
+
 #include <string>
 #include "Utilities.h"
 
@@ -15,21 +20,34 @@ size_t Utilities::getFieldWidth() const {
 
 std::string Utilities::extractToken(const std::string &str, size_t &next_pos, bool &more) {
     std::string buffer{};
-    
-    if(str.find(m_delimiter) != next_pos) {
+    if(str.find(m_delimiter, next_pos) != std::string::npos) {
         
-        buffer = str.substr(next_pos, str.find(m_delimiter));
-        buffer = buffer.substr(buffer.find_first_not_of(" "), buffer.find_last_not_of(" ") + 1);
-        next_pos = str.find(m_delimiter) + 1;
-        more = true;
-        
-        if(m_widthField < str.length()) {
-            m_widthField = str.length();
+        if(str.find(m_delimiter, next_pos) == next_pos) {
+            more = false;
+            throw "this is retarded";
         }
         
+        buffer = str.substr(next_pos, str.substr(next_pos).find_first_of(m_delimiter));
+        buffer = buffer.substr(buffer.find_first_not_of(" "), buffer.find_last_not_of(" ") + 1);
+        next_pos = str.find(m_delimiter, next_pos) + 1;
+        more = true;
+        
+        if(m_widthField < buffer.length()) {
+            m_widthField = buffer.length();
+        }
+
+            
     }else {
+        
+        buffer = str.substr(next_pos, str.substr(next_pos).find_first_of(m_delimiter));
+        buffer = buffer.substr(buffer.find_first_not_of(" "), buffer.find_last_not_of(" ") + 1);
+        next_pos = str.find(m_delimiter, next_pos) + 1;
         more = false;
-        throw "this is retarded";
+        
+        if(m_widthField < buffer.length()) {
+            m_widthField = buffer.length();
+        }
+       
     }
     return buffer;
 }
