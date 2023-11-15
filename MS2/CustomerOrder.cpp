@@ -16,7 +16,7 @@ CustomerOrder::CustomerOrder() {
 
 CustomerOrder::CustomerOrder(const std::string & str) : CustomerOrder() {
     Utilities util;
-    
+    m_lstItem = nullptr;
     size_t nextpos = 0;
     bool more = false;
     string buffer = "";
@@ -121,7 +121,7 @@ void CustomerOrder::fillItem(Station &station, std::ostream &os) {
                 station.updateQuantity();
                 m_lstItem[i]->m_isFilled = true;
                 m_lstItem[i]->m_serialNumber = station.getNextSerialNumber();
-                os << "    Filled " << m_name << ", " << m_product << "[" << m_lstItem[i]->m_itemName << "]" << endl;
+                os << "    Filled " << m_name << ", " << m_product << " [" << m_lstItem[i]->m_itemName << "]" << endl;
             }else{
                 os << "    Unable to fill " << m_name << ", " << m_product << "[" << m_lstItem[i]->m_itemName << "]" << endl;
             }
