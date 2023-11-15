@@ -65,8 +65,8 @@ CustomerOrder& CustomerOrder::operator=(CustomerOrder && source) noexcept{
         }
         delete[] m_lstItem;
         m_cntItem = source.m_cntItem;
-        m_name = source.m_name;
-        m_product = source.m_product;
+        m_name = std::move(source.m_name);
+        m_product = std::move(source.m_product);
         m_lstItem = source.m_lstItem;
          
         source.m_cntItem = 0;
@@ -116,7 +116,7 @@ bool CustomerOrder::isItemFilled(const std::string &itemName) const {
 
 void CustomerOrder::fillItem(Station &station, std::ostream &os) {
     for(size_t i = 0; i < m_cntItem; i++){
-        if(m_lstItem[i]->m_itemName == station.getItemName()){
+        if(m_lstItem[i]->m_itemName == station.getItemName() && !m_lstItem[i]->m_isFilled){
             if(station.getQuantity() > 0){
                 station.updateQuantity();
                 m_lstItem[i]->m_isFilled = true;
@@ -125,7 +125,7 @@ void CustomerOrder::fillItem(Station &station, std::ostream &os) {
             }else{
                 os << "    Unable to fill " << m_name << ", " << m_product << "[" << m_lstItem[i]->m_itemName << "]" << endl;
             }
-            
+            i = m_cntItem;
         }
     }
 }
