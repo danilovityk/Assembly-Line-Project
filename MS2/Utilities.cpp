@@ -24,11 +24,11 @@ std::string Utilities::extractToken(const std::string &str, size_t &next_pos, bo
         
         if(str.find(m_delimiter, next_pos) == next_pos) {
             more = false;
-            throw "this is retarded";
+            throw "extract token find error";
         }
         
         buffer = str.substr(next_pos, str.substr(next_pos).find_first_of(m_delimiter));
-        buffer = buffer.substr(buffer.find_first_not_of(" "), buffer.find_last_not_of(" ") + 1);
+        buffer = buffer.substr(buffer.find_first_not_of(" "), buffer.find_last_not_of(" ") - buffer.find_first_not_of(" ") + 1);
         next_pos = str.find(m_delimiter, next_pos) + 1;
         more = true;
         

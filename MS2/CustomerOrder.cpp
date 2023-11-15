@@ -85,7 +85,17 @@ CustomerOrder::~CustomerOrder() {
 }
 
 bool CustomerOrder::isOrderFilled() const {
-    return false;
+    bool result = false;
+    for(size_t i = 0; i < m_cntItem; i++){
+            if(!m_lstItem[i]->m_isFilled){
+                i = m_cntItem;
+                result = false;
+            }else{
+                result = true;
+            }
+    }
+    
+    return result;
 }
 
 bool CustomerOrder::isItemFilled(const std::string &itemName) const {
