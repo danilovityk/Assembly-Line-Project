@@ -1,3 +1,8 @@
+// - Danylo Vityk
+// - 176326213
+// - dvityk@myseneca.ca
+// - Nov 15, 2023
+
 #include <iostream>
 #include <iomanip>
 #include "Utilities.h"

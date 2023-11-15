@@ -1,3 +1,8 @@
+// - Danylo Vityk
+// - 176326213
+// - dvityk@myseneca.ca
+// - Nov 15, 2023
+
 #ifndef SDDS_CUSTOMERORDER_H
 #define SDDS_CUSTOMERORDER_H
 #include "Station.h"
