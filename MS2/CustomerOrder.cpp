@@ -16,7 +16,7 @@ CustomerOrder::CustomerOrder() {
 
 CustomerOrder::CustomerOrder(const std::string & str) : CustomerOrder() {
     Utilities util;
-    m_lstItem = nullptr;
+
     size_t nextpos = 0;
     bool more = false;
     string buffer = "";
@@ -28,23 +28,31 @@ CustomerOrder::CustomerOrder(const std::string & str) : CustomerOrder() {
         m_product = util.extractToken(str, nextpos, more);
         while (more){
             buffer = util.extractToken(str, nextpos, more);
+            if(m_lstItem){
+                Item** tempArr = new Item*[m_cntItem + 1];
             
-            Item** tempArr = new Item*[m_cntItem + 1];
-        
-            for (size_t i = 0; i < m_cntItem; i++){
-                tempArr[i] = new Item(*m_lstItem[i]);
-                delete m_lstItem[i];
+                for (size_t i = 0; i < m_cntItem; i++){
+                    tempArr[i] = new Item(*m_lstItem[i]);
+                    delete m_lstItem[i];
+                }
+                delete[] m_lstItem;
+                
+                tempArr[m_cntItem++] = new Item (buffer);
+                m_lstItem = tempArr;
+            }else{
+                m_lstItem = new Item*[1];
+                m_lstItem[m_cntItem++] = new Item (buffer);
             }
-            delete[] m_lstItem;
+           
             
-            tempArr[m_cntItem++] = new Item (buffer);
-            m_lstItem = tempArr;
+            
             
         }
         if (util.getFieldWidth() > m_widthField){
             m_widthField = util.getFieldWidth();
         }
     }catch(const char*){
+    
         cerr << "failed the extraction of a token";
     }
     
@@ -125,7 +133,7 @@ void CustomerOrder::fillItem(Station &station, std::ostream &os) {
             }else{
                 os << "    Unable to fill " << m_name << ", " << m_product << "[" << m_lstItem[i]->m_itemName << "]" << endl;
             }
-            i = m_cntItem;
+            return;
         }
     }
 }
