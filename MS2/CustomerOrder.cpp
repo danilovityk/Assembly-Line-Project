@@ -14,7 +14,7 @@ CustomerOrder::CustomerOrder() {
     m_lstItem = nullptr;
 }
 
-CustomerOrder::CustomerOrder(const std::string & str) {
+CustomerOrder::CustomerOrder(const std::string & str) : CustomerOrder() {
     Utilities util;
     
     size_t nextpos = 0;
