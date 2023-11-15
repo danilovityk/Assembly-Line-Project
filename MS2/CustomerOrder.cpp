@@ -55,12 +55,7 @@ CustomerOrder::CustomerOrder(const CustomerOrder &) {
     throw "Copy construction is not allowed";
 }
 
-CustomerOrder::CustomerOrder(CustomerOrder && source) noexcept {
-    m_name = "";
-    m_product = "";
-    m_cntItem = 0;
-    m_lstItem = nullptr;
-    
+CustomerOrder::CustomerOrder(CustomerOrder && source) noexcept : CustomerOrder() {
     *this = std::move(source);
 }
 
