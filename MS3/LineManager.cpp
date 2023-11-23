@@ -92,7 +92,7 @@ void LineManager::reorderStations() {
 bool LineManager::run(std::ostream &os) {
     static size_t counter = 0;
     ++counter;
-    bool result = true, temp = false;
+    bool result = true; //, temp = false;
     os << "Line Manager Iteration: " << counter << endl;
     if(g_pending.size() > 0){
         *m_firstStation += std::move(g_pending.front());
