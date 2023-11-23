@@ -129,7 +129,7 @@ void CustomerOrder::fillItem(Station &station, std::ostream &os) {
                 m_lstItem[i]->m_serialNumber = station.getNextSerialNumber();
                 os << "    Filled " << m_name << ", " << m_product << " [" << m_lstItem[i]->m_itemName << "]" << endl;
             }else{
-                os << "    Unable to fill " << m_name << ", " << m_product << "[" << m_lstItem[i]->m_itemName << "]" << endl;
+                os << "    Unable to fill " << m_name << ", " << m_product << " [" << m_lstItem[i]->m_itemName << "]" << endl;
             }
             return;
         }
