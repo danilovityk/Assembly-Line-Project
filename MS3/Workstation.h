@@ -1,3 +1,8 @@
+// - Danylo Vityk
+// - 176326213
+// - dvityk@myseneca.ca
+// - Nov 23, 2023
+
 #ifndef WORKSTATION_H
 #define WORKSTATION_H
 

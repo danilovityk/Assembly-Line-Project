@@ -1,3 +1,8 @@
+// - Danylo Vityk
+// - 176326213
+// - dvityk@myseneca.ca
+// - Nov 23, 2023
+
 #include <fstream>
 #include <string>
 #include <algorithm>
@@ -38,7 +43,7 @@ LineManager::LineManager(const std::string &file, const std::vector<Workstation 
                 }
                 
             }else{
-                //if there is no next
+                
                 auto it = std::find_if(stations.begin(), stations.end(), [&](const Workstation* station){
                     return station->getItemName() == buffer;
                 });
@@ -92,7 +97,7 @@ void LineManager::reorderStations() {
 bool LineManager::run(std::ostream &os) {
     static size_t counter = 0;
     ++counter;
-    bool result = true; //, temp = false;
+    bool result = true;
     os << "Line Manager Iteration: " << counter << endl;
     if(g_pending.size() > 0){
         *m_firstStation += std::move(g_pending.front());
@@ -105,13 +110,8 @@ bool LineManager::run(std::ostream &os) {
     
     for_each(m_activeLine.begin(), m_activeLine.end(), [&](Workstation* station){
         station->attemptToMoveOrder();
-        //if(!temp){result = false;} //if at least one station moved, iterate one more time;
     });
     
-//    for_each(m_activeLine.begin(), m_activeLine.end(), [&](Workstation* station){
-//        temp = station->m_orders.size() < 1;
-//        if(!temp && result){result = false;}
-//    });
     
     if(g_completed.size() + g_incomplete.size() == m_cntCustomerOrder){
         result = true;
