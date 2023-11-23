@@ -147,7 +147,8 @@ void CustomerOrder::display(std::ostream &os) const {
         }else{
             os << "TO BE FILLED";
         }
-        os << endl;
+        
+        os << right << endl;
     }
    
 }
