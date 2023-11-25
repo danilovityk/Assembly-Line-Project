@@ -109,31 +109,6 @@ The `Station` class has the following structure:
     - this function terminates the printed message with an endline
 
 
-## Tester Module
-
-The tester module and the input files are included in the repository. Do not modify any of them.
-
-## Sample Output
-
-Look in the file `ms1_output.txt` for the command line necessary to start the application and the expected output.
-
-#### Submission
-
-Before the due date, upload to your matrix account the following files:
--  `Utilities.h`
--  `Utilities.cpp`
--  `Station.h`
--  `Station.cpp`
-
-From a command prompt, execute the following command:
-
-```bash
-~profname.proflastname/submit 345_ms1
-```
-
-and follow the instructions.
-
-**A successful submission does not guarantee full credit!**
 
 
 
@@ -259,35 +234,7 @@ struct Item
 
 
 
-## Tester Module
 
-The tester module and input files are included in the repository. Do not modify any of them.
-
-## Sample Output
-
-Look in the file `ms2_output.txt` for the command line necessary to start the application and the expected output.
-
-
-
-#### Submission
-
-Before the due date, upload to your matrix account the following files:
-- `Utilities.h`
-- `Utilities.cpp`
-- `Station.h`
-- `Station.cpp`
-- `CustomerOrder.h`
-- `CustomerOrder.cpp`
-
-From a command prompt, execute the following command:
-
-```bash
-~profname.proflastname/submit 345_ms2
-```
-
-and follow the instructions.
-
-**A successful submission does not guarantee full credit!**
 
 
 
@@ -410,38 +357,3 @@ The `LineManager` class manages an assembly line of active stations and contains
 - `void display(std::ostream& os) const` -- this query displays all active stations on the assembly line in their current order
 
 
-## Tester Module
-
-The tester module and input files are included in the repository. Do not modify any of them.
-
-## Sample Output
-
-Look in the file `ms3_output.txt` for the command line necessary to start the application and the expected output.
-
-
-#### Submission
-
-Create a **text** file named `reflect.txt`.  Add any comments you wish to make.
-
-Before the due date, upload to your matrix account the following files:
-- `Utilities.h`
-- `Utilities.cpp`
-- `Station.h`
-- `Station.cpp`
-- `CustomerOrder.h`
-- `CustomerOrder.cpp`
-- `Workstation.h`
-- `Workstation.cpp`
-- `LineManager.h`
-- `LineManager.cpp`
-- `reflect.txt`
-
-From a command prompt, execute the following command:
-
-```bash
-~profname.proflastname/submit 345_ms3
-```
-
-and follow the instructions.
-
-**A successful submission does not guarantee full credit!**
