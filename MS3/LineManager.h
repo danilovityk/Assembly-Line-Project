@@ -6,7 +6,6 @@
 #ifndef LINEMANAGER_H
 #define LINEMANAGER_H
 
-#include <vector>
 #include "Workstation.h"
 namespace sdds {
 

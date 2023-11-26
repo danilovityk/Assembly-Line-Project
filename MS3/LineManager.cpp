@@ -7,6 +7,7 @@
 #include <string>
 #include <algorithm>
 #include <iostream> //debugging purposes only
+#include <vector>
 #include "LineManager.h"
 using namespace std;
 namespace sdds{
