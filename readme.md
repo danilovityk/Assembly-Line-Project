@@ -10,49 +10,6 @@ The project is divided into 3 milestones to help guide you through implementatio
 
 
 
-## Project Deadlines
-
-The deadlines for the project's milestones are on Saturday evenings at midnight EDT (see the schedule below).
-
-| Milestone | Date    |
-| --------- | ------- |
-| #1        | Nov 11  |
-| #2        | Nov 18  |
-| #3        | Dec 02  |
-
-
-All files that you submit (`*.h` and `*.cpp`) should contain the following comment at the top (with your information filled):
-```cpp
-// Name:
-// Seneca Student ID:
-// Seneca email:
-// Date of completion:
-//
-// I confirm that I am the only author of this file
-//   and the content was created entirely by me.
-```
-
-**Milestone #3** can be submitted after December 2 until December 12, with a penalty of 10% for each day late. After December 12 2023, the submission process is considered closed.
-
-- submissions received on Dec  3 2023 can receive **max 90%**;
-- submissions received on Dec  4 2023 can receive **max 80%**;
-- submissions received on Dec  5 2023 can receive **max 70%**;
-- submissions received on Dec  6 2023 can receive **max 60%**;
-- submissions received on Dec  7 2023 can receive **max 50%**;
-- submissions received on Dec  8 2023 can receive **max 40%**;
-- submissions received on Dec  9 2023 can receive **max 30%**;
-- submissions received on Dec 10 2023 can receive **max 20%**;
-- submissions received on Dec 11 2023 can receive **max 10%**;
-- submissions received on Dec 12 2023 can receive **max  0%**;
-
-**Submission of a working copy of this project is mandatory!** Students who don't submit a complete working project, cannot pass this course. A project is considered complete if all three milestones have been submitted before submission closes and the implementation follows the requirements.  The late submission penalty applied to the project mark will take into consideration the date when the project becomes complete.
-
-All of your source code, including externally linked variables, should be in the `sdds` namespace. Use class declarations in header files wherever appropriate.
-
-
-
-
-
 
 # Milestone 1
 
@@ -152,31 +109,6 @@ The `Station` class has the following structure:
     - this function terminates the printed message with an endline
 
 
-## Tester Module
-
-The tester module and the input files are included in the repository. Do not modify any of them.
-
-## Sample Output
-
-Look in the file `ms1_output.txt` for the command line necessary to start the application and the expected output.
-
-#### Submission
-
-Before the due date, upload to your matrix account the following files:
--  `Utilities.h`
--  `Utilities.cpp`
--  `Station.h`
--  `Station.cpp`
-
-From a command prompt, execute the following command:
-
-```bash
-~profname.proflastname/submit 345_ms1
-```
-
-and follow the instructions.
-
-**A successful submission does not guarantee full credit!**
 
 
 
@@ -302,35 +234,7 @@ struct Item
 
 
 
-## Tester Module
 
-The tester module and input files are included in the repository. Do not modify any of them.
-
-## Sample Output
-
-Look in the file `ms2_output.txt` for the command line necessary to start the application and the expected output.
-
-
-
-#### Submission
-
-Before the due date, upload to your matrix account the following files:
-- `Utilities.h`
-- `Utilities.cpp`
-- `Station.h`
-- `Station.cpp`
-- `CustomerOrder.h`
-- `CustomerOrder.cpp`
-
-From a command prompt, execute the following command:
-
-```bash
-~profname.proflastname/submit 345_ms2
-```
-
-and follow the instructions.
-
-**A successful submission does not guarantee full credit!**
 
 
 
@@ -453,38 +357,3 @@ The `LineManager` class manages an assembly line of active stations and contains
 - `void display(std::ostream& os) const` -- this query displays all active stations on the assembly line in their current order
 
 
-## Tester Module
-
-The tester module and input files are included in the repository. Do not modify any of them.
-
-## Sample Output
-
-Look in the file `ms3_output.txt` for the command line necessary to start the application and the expected output.
-
-
-#### Submission
-
-Create a **text** file named `reflect.txt`.  Add any comments you wish to make.
-
-Before the due date, upload to your matrix account the following files:
-- `Utilities.h`
-- `Utilities.cpp`
-- `Station.h`
-- `Station.cpp`
-- `CustomerOrder.h`
-- `CustomerOrder.cpp`
-- `Workstation.h`
-- `Workstation.cpp`
-- `LineManager.h`
-- `LineManager.cpp`
-- `reflect.txt`
-
-From a command prompt, execute the following command:
-
-```bash
-~profname.proflastname/submit 345_ms3
-```
-
-and follow the instructions.
-
-**A successful submission does not guarantee full credit!**
